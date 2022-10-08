@@ -10,6 +10,11 @@ use books_industry;
 
 USE books_industry;
 
+/* 
+ * Create tables author, publisher, book_language, book, book_author, address_status, address, country, customer, 
+ * customer_address, order_line, order_status, cust_order, shipping_method, order_history
+ */
+ 
 CREATE TABLE author (
     author_id INT,
     author_name VARCHAR(400),
@@ -96,8 +101,6 @@ CREATE TABLE shipping_method (
     CONSTRAINT pk_shipmethod PRIMARY KEY (method_id)
 );
 
-
-
 CREATE TABLE cust_order (
     order_id INT AUTO_INCREMENT,
     order_date DATETIME,
@@ -115,7 +118,6 @@ CREATE TABLE order_status (
     status_value VARCHAR(20),
     CONSTRAINT pk_orderstatus PRIMARY KEY (status_id)
 );
-
 
 CREATE TABLE order_line (
     line_id INT AUTO_INCREMENT,
