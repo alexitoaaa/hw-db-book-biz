@@ -2,63 +2,103 @@
 
 /*
 Entities:
-  isbn
-  title 
-  salesCount 
-  pageCount 
-  language 
-  bookRoyalties
-  
-books
-  isbn 
-  title 
-  salesCount 
-  pageCount 
-  language 
-  bookRoyalties
-  
-authors
-  authorId 
-  firstName 
-  lastName 
-  authorLanguage 
-  authorRoyalties
-  
-genres
-  genreId 
-  genre
-  
-customers
-  customerId 
-  firstName
-  lastName
-  
-editors
-  editorId 
-  editorCompany
-  
-publishers
-  publisherId
-  name
-  phoneNo
-  address
-  
-orders
-  orderId 
-  dateOfOrder
+
+author 
+    author_id 
+    author_name
+
+publisher 
+    publisher_id 
+    publisher_name 
+
+book_language 
+    language_id 
+    language_code 
+    language_name 
+
+book 
+    book_id
+    title 
+    isbn13
+    language_id
+    num_pages 
+    publication_date DATE
+    publisher_id 
+    book_author 
+    book_id 
+    author_id 
+   
+address_status 
+    status_id 
+    address_status 
+   
+country 
+    country_id 
+    country_name 
+    
+address 
+    address_id 
+    street_number 
+    street_name 
+    city 
+    country_id 
+customer 
+    customer_id 
+    first_name 
+    last_name 
+    email 
+
+customer_address 
+    customer_id 
+    address_id 
+    status_id 
+	
+shipping_method 
+    method_id 
+    method_name 
+    cost 
+	
+cust_order 
+    order_id 
+    order_date 
+    customer_id 
+    shipping_method_id 
+    dest_address_id 
+	
+order_status 
+    status_id 
+    status_value 
+	
+order_line 
+    line_id 
+    order_id 
+    book_id 
+    price 
+
+order_history 
+    history_id 
+    order_id 
+    status_id 
+    status_date 
 
 /*
 // ----------- list of Unique identifiers - Primary Keys ----------
 /*
 
 Unique Identifiers:
-  isbn 
-  authorId 
-  genreId 
-  customerId
-  editorId
-  publisherId 
-  orderId
+  author_id
+  publisher_id
+	language_id
+	book_id
+  status_id
+	country_id
+	address_id
+	customer_id
+	method_id
+	order_id
+  customer_id
+	line_id
+	history_id
 
 /*
 // ----------- Table Relationships - Cardinality between Entities ----------
@@ -71,3 +111,4 @@ books, editors N:1
 books, publishers N:1
 books, orders 1:N
 books, customers 1:N
+
